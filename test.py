@@ -12,7 +12,7 @@ def startup():
         username = input('Database Username: ')
         password = getpass.getpass()
         try:
-            cnct = mysql.connector.connect(host="127.0.0.1", port = "3306", user = username ,passwd = password, db="mydb")
+            cnct = mysql.connector.connect(host="52.91.200.23", port = "3306", user = username ,passwd = password, db="mydb")
             cond = True
             os.system('cls' if os.name == 'nt' else 'clear')
             print('Database Login Successful')

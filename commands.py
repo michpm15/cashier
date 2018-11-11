@@ -531,11 +531,15 @@ def Receipt(x):
     os.system('cls' if os.name == 'nt' else 'clear')
 
     x.execute('Select max(ReceiptID) from Receipt')
-    if x.rowcount > 0:
-        row = x.fetchall()
-        newID = int(row[0][0]) + 1
-    else:
+    try:
+        if x.rowcount > 0:
+            row = x.fetchall()
+            newID = int(row[0][0]) + 1
+        else:
+            newID = 1
+    except:
         newID = 1
+
 
     ItemDict = {}
     entry = 'N'
